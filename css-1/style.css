@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root {
+    --primary-color: green;
+    --secondary-color: darkgreen;
+    --hover-for-title: blue;
+    --font-big: 4rem;
+}
+
+
+.container {
+    color: #FFFFFF;
+    background-color: var(--primary-color);
+    padding: 2rem;
+    border: 1rem solid red;
+    margin: 3rem;
+    width: 50%;
+}
+
+#titulo {
+    color: darkorange;
+    background-color: aqua;
+    font-size: var(--font-big);
+    padding: 16px;
+    border: 1rem solid rebeccapurple;
+    margin: 32px;
+    
+}
+
+#titulo:hover {
+    background-color: var(--hover-for-title);
+    width: 500px;
+}
+
+#titulo:focus {
+    font-size: 6rem;
+}
+
+#titulo::first-letter {
+    color: #FFFFFF;
+}
+
+#contenedor-2 {
+    color: #FFFFFF;
+    background-color: var(--secondary-color);
+    padding: 2rem;
+    border: 1rem solid yellow;
+    height: min-content;
+    width: 100%;
+    min-width: 200px;
+}
+
+h1 {
+    background-color: red;
+}
+
+#name-info {
+    background-color: #f6f0f0;
+    padding: 1rem;
+    border: 2px solid #b6a0af;
+    border-radius: 100px;
+    font-size: 2rem;
+}
+
+#name-info::placeholder {
+    color: blue;
+}
+
+#name-info:hover {
+    background-color: cadetblue;
+}
+
+#name-info:focus-visible {
+    border-color: navy;
+    border-width: 10px;
+}
+
+input:checked {
+    color: chartreuse;
+    width: 10px;
+    padding: 10px;
+
+}
+
+
+
+@media (max-width: 450px) {
+    #contenedor-2 {
+        background-color: #ceabab;
+        width: 100px;
+        min-width: 50px;
+    }    
+}
