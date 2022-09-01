@@ -1,35 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <title>Plants Company</title>
 </head>
+
 <body>
-    <header class="title-container">
-        <div>
-            <span class="material-symbols-outlined">
-                menu
+    <header>
+        <div class="title-img-container">
+            <div class="title-container">
+                <span class="material-symbols-outlined" id="menu">
+                    menu
                 </span>
-            <img src="/assets/logo.png" alt="logo de la compania" width="50" height="50">
-            <h1 class="title">Plants Company</h1>
+                <img src="/assets/logo.png" alt="logo de la compania" width="50" height="50">
+                <h1 class="title">Plants Company</h1>
+            </div>
+
+            <div class="image-container">
+                <img src="assets/monstera.png" alt="monstera plant">
+            </div>
         </div>
 
-        <div class="image-container">
-            <img src="assets/monstera.png" alt="monstera plant">
-        </div>
+        <ul class="navbar">
+            <li class="navbar-header"> Inicio </li>
+            <li class="navbar-header"> Plantas</li>
+            <li class="navbar-header"> Galeria </li>
+            <li class="navbar-header"> Contacto </li>
+        </ul>
     </header>
 
     <main class="main-container">
         <section class="monstera-info">
             <h1> Monstera Deliciosa. Famosa para interiores </h1>
-            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis adipisci accusamus, ipsa nobis corporis ea nostrum. Optio voluptatum eum voluptas eius quidem, rerum ad excepturi veritatis. Qui, deleniti nihil. Sunt!</p>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis adipisci accusamus, ipsa nobis corporis
+                ea nostrum. Optio voluptatum eum voluptas eius quidem, rerum ad excepturi veritatis. Qui, deleniti
+                nihil. Sunt!</p>
             <button class="outlined-button"> Ver más sobre monstera </button>
         </section>
+
+        <section class="bonsai-container">
+            <div class="bonsai-image">
+                <img src="assets/bonsai.png" alt="bonsai">
+            </div>
+            <h1> Grafted ficus bonsai. Árbol bonsai para tu espiritu. </h1>
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis adipisci accusamus, ipsa nobis corporis
+                ea nostrum. Optio voluptatum eum voluptas eius quidem, rerum ad excepturi veritatis. Qui, deleniti
+                nihil. Sunt!</p>
+
+            <div class="buttons-container">
+                <button class="primary-button"> Comprar </button>
+                <button class="outlined-button on-variant"> Conocer más </button>
+            </div>
+        </section>
+
+        <section class="carrousel-container">
+            <h1> Nuestra selección de plantas </h1>
+
+            <div class="carrousel">
+                <div class="bonsai-image">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+                <div class="bonsai-image on-carrousel">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+                <div class="bonsai-image on-carrousel">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+                <div class="bonsai-image on-carrousel">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+                <div class="bonsai-image on-carrousel">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+                <div class="bonsai-image on-carrousel">
+                    <img src="assets/plant1.png" alt="bonsai">
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-title">
+            <img src="/assets/logo.png" alt="logo de la compania" width="50" height="50">
+            <h1 class="title">Plants Company</h1>
+        </div>
+
+        <ul class="navbar-footer">
+            <li class="navbar-element"> Inicio </li>
+            <li class="navbar-element"> Plantas</li>
+            <li class="navbar-element"> Galeria </li>
+            <li class="navbar-element"> Contacto </li>
+        </ul>
+        <div class="line"></div>
+        <span class="copyright"> Copyright. Tutorias Web</span>
+    </footer>
 </body>
+
 </html>
