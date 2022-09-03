@@ -24,7 +24,7 @@ header {
     width: 100%;
 }
 
-.navbar {
+.button-navbar-container {
     display: none;
 }
 
@@ -47,15 +47,15 @@ header {
 .title-container {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
+    width: fit-content;
 }
-
 
 .image-container {
     background-color: var(--secondary-color);
     display: flex;
     position: relative;
-    top: 20%;
+    top: 10%;
     border-top-left-radius: 150px;
     border-bottom-right-radius: 150px;
     padding: 3rem;
@@ -66,12 +66,8 @@ header {
     background-color: var(--background-color);
 }
 
-#menu {
-    justify-self: left;
-}
-
 .monstera-info {
-    margin-top: 13vh;
+    margin-top: 8vh;
     color: var(--text-black);
     display: grid;
     gap: 16px;
@@ -108,21 +104,21 @@ header {
 
 .bonsai-container {
     background-color: var(--background-variant);
-    height: 100vh;
+    height: max-content;
     padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.bonsai-container > h1 {
+.bonsai-info > h1 {
     font-family: var(--pretty-font);
     font-weight: 500;
     font-size: 1.5rem;
     margin-bottom: 1rem;
 }
 
-.bonsai-container > p {
+.bonsai-info > p {
     font-family: var(--normal-font);
     font-size: 0.875rem;
     margin-bottom: 1rem;
@@ -139,9 +135,12 @@ header {
 }
 
 .buttons-container {
-    width: 65%;
+    width: fit-content;
     display: flex;
-    justify-content: space-between;
+}
+
+.buttons-container > .primary-button {
+    margin-right: 1rem;
 }
 
 .primary-button {
@@ -230,6 +229,7 @@ footer {
 
 .navbar-element {
     color: var(--text-white);
+    font-family: var(--normal-font);
 }
 
 .navbar-element::marker {
@@ -245,6 +245,8 @@ footer {
 .copyright {
     color: var(--text-white);
     margin-top: 1rem;
+    font-family: var(--normal-font);
+    font-size: 1rem;
     align-self: center;
 }
 
@@ -257,9 +259,18 @@ footer {
     
     header {
         background-color: var(--background-variant);
-        height: 10vh;
+        height: 20vh;
         display: flex;
         flex-direction: row;
+    }
+
+    .button-navbar-container {
+        display: flex;
+        flex-direction: column;
+        padding-left: 4rem;
+        padding-right: 2rem;
+        width: 100%;
+        justify-content: center;
     }
 
     .title-img-container {
@@ -276,6 +287,15 @@ footer {
         font-size: 14px;
         font-weight: 500;
         width: 4rem;
+        height: fit-content;
+    }
+
+    .buttons-header {
+        display:flex;
+        width: 100%;
+        margin-top: 1rem;
+        justify-content: center;
+        min-height: 40px;
     }
 
     .navbar-header::marker {
@@ -286,10 +306,16 @@ footer {
         display: flex;
         flex-direction: row;
         justify-content: space-around;
-        width: max-content;
-        position: absolute;
-        align-self: center;
-        right: 32px;
+        width: 100%;
+    }
+
+    .buttons-header > .primary-button{
+        margin-right: 1rem;
+        max-height: 40px;
+    }
+
+    .buttons-header > .outlined-button{
+        max-height: 40px;
     }
 
 
@@ -300,8 +326,8 @@ footer {
     .monstera-info {
         justify-items: end;
         margin: 0;
-        padding: 2rem;
-        margin-top: 15%;
+        padding-right: 2rem;
+        padding-top: 12vh;
     }
 
     .monstera-info > p {
@@ -315,17 +341,142 @@ footer {
     }
 
     .bonsai-container {
-        margin-top: 30vh;
+        margin-top: 25vh;
         flex-direction: row-reverse;
+        padding: 2rem;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .bonsai-image {
+        width: min-content;
+        height: min-content;
+        margin: 0;
+    }
+
+    .buttons-container {
+        height: fit-content;
+        align-self: flex-end;
+    }
+    .bonsai-info {
+        height: fit-content;
+        max-width: 45%;
+        align-content: flex-end;
+    }
+
+    .carrousel-container {
+        padding: 2rem;
+    }
+
+    .on-carrousel {
+        margin-left: 1.5rem;
+    }
+
+    footer {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        padding-left: 4rem;
+        padding-right: 4rem;
+    }
+
+    .footer-title {
+        margin-bottom: 1.5rem;
     }
     
-    .bonsai-image {
-        width: 314px;
-        height: 364px;
+    .footer-title > .title {
+        font-size: 2.250rem;
     }
 
-    .bonsai-image > img {
-        width: 100%;
+    .footer-title > img {
+        width: 100px;
+        height: 100px;
+    }
+}
 
+/* Responsive para pantallas de 1024px o mayor */
+
+@media screen and (min-width: 1024px) {
+
+    header {
+        max-height: min-content;
+    }
+
+    .title-img-container {
+        height: 75vh;
+        max-height: 745px;
+    }
+
+    .title-container {
+        width: 100%;
+    }
+
+    .title-container > img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .button-navbar-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 4rem;
+        padding-right: 2rem;
+        width: 100%;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons-header {
+        margin: 0;
+    }
+
+    .image-container > img {
+        width: 200px;
+        height: fit-content;
+    }
+    .image-container {
+        padding-left: 6.25rem;
+        padding-right: 6.25rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        width: fit-content;
+        left: 15%;
+        top: 20%;
+    }
+
+    .monstera-info {
+        padding-left: 5rem;
+        padding-right: 5rem;
+    }
+
+    .bonsai-container {
+        margin-top: 30%;
+        padding: 5rem;
+    }
+}
+
+@media screen and (min-width: 1440px) {
+    header {
+        max-height: fit-content;
+    }
+    .button-navbar-container {
+        flex-wrap: nowrap;
+        padding: 3rem;
+    }
+
+    .monstera-info {
+        padding: 8rem;
+    }
+
+    .bonsai-container {
+        padding: 8rem;
+        margin-top: 8%;
+    }
+
+    .carrousel-container {
+        padding-left: 8rem;
+        padding-right: 8rem;
     }
 }
