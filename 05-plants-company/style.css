@@ -25,7 +25,16 @@ header {
 }
 
 .button-navbar-container {
+    position: relative;
+    background-color: var(--background-variant);
+    z-index: -200;
+    left: -9000px;
     display: none;
+}
+
+.show-navbar {
+    display: flex;
+    left: 10px;
 }
 
 .title-img-container {

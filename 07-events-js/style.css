@@ -1,0 +1,25 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#title {
+    color: blue;
+}
+
+.primary-button {
+    width: auto;
+    padding: 10px;
+    height: auto;
+    border: 3px solid rgb(123, 45, 45);
+    border-radius: 100px;
+}
+
+.otra-clase {
+    background-color: cyan;
+}
+
+body {
+    height: 20000000px;
+}
