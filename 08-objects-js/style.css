@@ -1,0 +1,10 @@
+.button {
+    background: rgb(41, 110, 52);
+    padding: 10px;
+    color: white;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
