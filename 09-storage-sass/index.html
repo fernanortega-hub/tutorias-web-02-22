@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="app.js" defer></script>
+</head>
+<body>
+    <h1 class="title"> Hola Fernando</h1>
+    <h2 class="title-2"> Ingresa una tarea </h2>
+
+    <div class="input-container"> 
+        <label for="tarea"> Tarea: </label>
+        <input type="text" id="tarea" placeholder="Lavar los platos"/>
+        <button class="primary-button" id="add-task">
+            <span class="material-symbols-outlined">
+                add
+                </span>
+            Añadir 
+        </button>
+    </div>
+
+    <div id="container-tasks" class="todo-container hidden"> 
+
+    </div>
+</body>
+</html>
