@@ -30,28 +30,124 @@
 const button = document.getElementById('add-task');
 const inputTask = document.getElementById('tarea');
 const container = document.getElementById("container-tasks");
+const taskNumber = document.getElementById("task-number");
+let todos = [];
+// let otro = ["hola", 1, true];
+// let otro2 = JSON.stringify(otro);
+// console.log(otro)
+// console.log(otro2)
+// console.log(JSON.parse(otro2))
 
 
+function showTask() {
+    let getTodos = localStorage.getItem("todos");
 
+    if (getTodos === null) {
+        todos = []
+    } else {
+        todos = JSON.parse(getTodos)
 
+        if (todos.length > 0) {
+            container.classList.remove("hidden")
+        } else {
+            container.classList.add("hidden")
+        }
+
+        let div = "";
+
+        todos.forEach((element, index) => {
+            div +=
+                `<div class="task">
+                <input id=${index} type="checkbox" class="check-task" onclick="checkTask(${index})"/>
+                ${element}
+                <div> 
+                    <button class="edit-task" onclick="editTask(${index})"> 
+                    <span class="material-symbols-outlined">
+                    edit
+                    </span> 
+                </button>
+                <button class="delete-task" onclick="deleteTask(${index})"> 
+                    <span class="material-symbols-outlined">
+                    delete
+                    </span> 
+                </button>
+                    </div>
+            </div>`;
+        });
+
+        todos.length === 1 
+        ? 
+            taskNumber.textContent = `Tienes ${todos.length} tarea pendiente` 
+            : 
+            taskNumber.textContent = `Tienes ${todos.length} tareas pendientes`
+        
+
+        container.innerHTML = div;
+
+    }
+
+}
+
+showTask()
 
 button.onclick = (ev) => {
+
     if (localStorage.getItem("todos") === null) {
-        var todos = [];
         localStorage.setItem("todos", JSON.stringify(todos))
     }
 
     todos = JSON.parse(localStorage.getItem('todos'))
-    
-    if(inputTask.value === "") {
+
+    if (inputTask.value === "") {
         alert("Agrega texto a la tarea")
     } else {
-        const div = document.createElement("div");
-        container.classList.remove("hidden")
+
         todos.push(inputTask.value)
-        localStorage.setItem('todos', JSON.stringify(todos))
-        // div.textContent = todos[0]
-        container.appendChild(div)
+        localStorage.setItem('todos', JSON.stringify(todos));
+        inputTask.value = ""
+        showTask();
     }
+}
+
+function deleteTask(index) {
+    let getTodos = localStorage.getItem("todos");
+
+    todos = JSON.parse(getTodos);
+
+    todos.splice(index, 1);
+
+    localStorage.setItem('todos', JSON.stringify(todos))
+
+    showTask();
+}
+
+function checkTask(id) {
+    const checkbox = document.getElementById(id)
+
+    if (checkbox.checked) {
+        console.log("Activado")
+        checkbox.parentElement.classList.add("checked")
+
+    } else {
+        console.log("Desactivado")
+        checkbox.parentElement.classList.remove("checked")
+
+    }
+}
+
+
+function editTask(position) {
+    let getTodos = localStorage.getItem("todos");
+    todos = JSON.parse(getTodos);
+
+    inputTask.value = todos[position];
+
+    if(inputTask.value === "") {
+        alert("Agrega texto")
+    } else {
+        todos[position] = inputTask.value;
+    }
+    showTask();
+
 }
 

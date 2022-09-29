@@ -62,6 +62,7 @@
 
 .primary-button:hover {
   background-color: #C1E8FF;
+  color: #001E2B;
 }
 
 .todo-container {
@@ -74,6 +75,69 @@
 
 .hidden {
   display: none;
+}
+
+.task {
+  background-color: #006687;
+  font-family: "Raleway", sans-serif;
+  color: #FFFFFF;
+  padding: 1rem;
+  border: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 1rem;
+  margin-bottom: 8px;
+}
+
+.delete-task {
+  background-color: #FFDAD6;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: 0;
+}
+
+.check-task {
+  border: 1px solid #71787C;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.checked {
+  background-color: #50616B;
+  color: #DDE3E8;
+  text-decoration: line-through;
+}
+
+.edit-task {
+  background-color: #C1E8FF;
+  padding: 8px;
+  width: 40px;
+  height: 40px;
+  border-radius: 100px;
+  border: 0;
+  margin-right: 8px;
+}
+
+@media screen and (min-width: 1024px) {
+  .todo-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 1rem;
+  }
+  #tarea {
+    width: 400px;
+  }
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
