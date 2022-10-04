@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <script src="add_product.js" defer> </script>
+    <title>Agregar producto</title>
+</head>
+<body>
+    <div class="header">
+        <a href="index.html"> 
+            <span class="material-symbols-outlined">
+                arrow_back
+            </span>  
+        </a>
+        
+        <h1 class="title"> Agregar producto </h1>
+    </div>
+
+    <form id="form-add-product">
+        <label for="vendor-input"> Nombre de vendedor: </label>
+        <input id="vendor-input" name="vendor" type="text" class="form-input" required>
+
+        <label for="product-input"> Nombre de producto: </label>
+        <input id="product-input" name="product" type="text" class="form-input" required>
+
+        <label for="price-input"> Precio de producto: </label>
+        <input id="price-input" name="price" type="number" class="form-input" required>
+
+        <label for="title-input"> Titulo de producto: </label>
+        <input id="title-input" name="title" type="text" class="form-input" required>
+
+        <label for="description-input"> Descripción de producto: </label>
+        <input id="description-input" name="description" type="text" class="form-input" required>
+
+        <label for="location-input"> Dirección de entrega: </label>
+        <input id="location-input" name="location"  type="text" class="form-input" required>
+
+        <label for="image-input"> Imagen de producto: </label>
+        <input id="image-input" name="image"  type="text" class="form-input" required>
+
+        <div class="container-buttons">
+            <button id="add-product-btn" type="submit"> Añadir producto </button>
+            <button id="cancel-btn" type="button"> Cancelar </button>
+        </div>
+    </form>
+</body>
+</html>
