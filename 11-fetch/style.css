@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-color: #E7E3D1;
+}
+
+.switch {
+    position: relative;
+    width: 52px;
+    display: flex;
+    align-items: center;
+    height: 32px;
+}
+
+.switch > input {
+    opacity: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 100px;
+    border: 1px solid #7A7768;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    height: 24px;
+    width: 24px;
+    top: 4px;
+    left: 5px;
+    background-color: #7A7768;
+    border-radius: 100px;
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background-color: #D2CB4D;
+    border: 0;
+}
+
+input:checked + .slider::before {
+    transform: translateX(19px);
+    background-color: #343200;
+}
+
+.mode-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding-inline: 4rem;
+    margin: 2rem;
+}
+
+.mode {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.title {
+    font-size: 1.8rem;
+    text-align: center;
+}
+
+.quote-container {
+    background-color: #656100;
+    margin-top: 3rem;
+    margin-inline: 1rem;
+    padding: 10px;
+    height: fit-content;
+    border-radius: 4px;
+    color: #fff;
+}
+
+#quote {
+    width: 100%;
+    text-align: center;
+    font-size: 1.4rem;
+}
+
+.author-section {
+    display: flex;
+    margin-inline: 1rem;
+    margin-top: 4rem;
+    align-items: center;
+}
+
+.author-container {
+    background-color: #D2CB4D;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+    margin-left: 12px;
+    border-radius: 4px;
+}
+
+#random-quote-btn {
+    display: flex;
+    align-items: center;
+    margin-top: 3rem;
+    margin-inline: 1rem;
+    width: calc(100% - 2rem);
+    justify-content: center;
+    height: 40px;
+    border-radius: 100px;
+    border: 0;
+    background-color: #656100;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+body.dark {
+    background-color: #49473a;
+}
+
+
+.mode-container.dark {
+    transition: 0.4s;
+    color: #CAC7B5;
+}
+
+.title.dark {
+    transition: 0.4s;
+    color: #CAC7B5;
+}
+
+#random-quote-btn.dark {
+    transition: 0.4s;
+    color: #343200;
+    background-color: #D2CB4D;
+}
+
+.quote-container.dark {
+    transition: 0.4s;
+    color: #343200;
+    background-color: #D2CB4D;
+}
+
+.author-title.dark {
+    transition: 0.4s;
+    color: #CAC7B5;
+}
+
+.author-container.dark {
+    transition: 0.4s;
+    color: #EEE766;
+    background-color: #4C4900;
+    border: 2px solid #949181;
+}
