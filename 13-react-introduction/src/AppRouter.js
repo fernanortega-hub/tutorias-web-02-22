@@ -4,6 +4,7 @@ import Custom404 from "./Components/Custom404";
 import Login from "./Components/Login";
 import User from "./Components/User";
 import Users from "./Components/Users";
+import ProtectedRoute from "./Components/ProtectRoute";
 
 const AppRouter = createBrowserRouter([
     {
@@ -17,7 +18,7 @@ const AppRouter = createBrowserRouter([
     },
     {
         path: '/users',
-        element: <Users/>,
+        element: <ProtectedRoute> <Users/> </ProtectedRoute>,
         children: [
             {
                 path: ':id',

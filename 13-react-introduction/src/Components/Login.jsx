@@ -1,47 +1,37 @@
-import React from "react";
-import useStorage from "../hooks/useStorage";
+import React, { useId } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from './Context'
+import InputGroup from "./Inputs/InputGroup";
+import NormalLayout from "./Layouts/NormalLayout";
+import Title from "./Title";
 
 const Login = () => {
     const navigate = useNavigate()
+    const { Login, isAuth } = useAuth()
 
-    const submitHandler = async (ev) => {
+    const SubmitHandler = async (ev) => {
         ev.preventDefault()
 
         const formData = new FormData(ev.target);
         const formBody = Object.fromEntries(formData.entries())
 
-        await fetch('https://reqres.in/api/login', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(formBody)
-        })
-            .then(res => {
-                if(res.ok) return res.json()
+        await Login(formBody)
 
-                throw new Error(`${res.statusText}, ${res.status}`)
-            })
-            .then(data => {
-                useStorage.set('token', data.token)
-                navigate('/users')
-            })
-            .catch(err => alert(err))
+        if (isAuth.status) {
+            console.log('Hola');
+            navigate('/users')
+        }
     }
 
     return (
-        <section className="h-screen p-4">
-            <h2 className="text-xl font-bold mb-4"> Inicio de sesión </h2>
-            <form className="flex flex-col space-y-4" onSubmit={submitHandler}>
-                <input type="email" name="email" placeholder="Ingresa tu email" className="h-14 border-2 border-green-500 rounded-lg pl-2" />
-
-                <input type="password" name="password" placeholder="Ingresa tu contraseña" className="h-14 border-2 border-green-500 rounded-lg pl-2" />
-
-                <button type="submit" className="bg-green-600 p-3 rounded-full text-base font-medium text-white"> Iniciar sesión </button>
+        <NormalLayout>
+            <form className="space-y-4" onSubmit={SubmitHandler}>
+                <Title> Inicio de sesión </Title>
+                <InputGroup label={'Ingresa tu correo'} placeholder={'example@gmail.com'} name={'email'} type={'email'} required={true} id={useId()} />
+                <InputGroup label={'Ingresa tu contraseña'} placeholder={'Contraseña'} name={'password'} type={'password'} required={true} id={useId()} />
+                <button type="submit" className="bg-green-600 p-3 rounded-full text-base font-medium text-white w-full"> Iniciar sesión </button>
             </form>
-        </section>
+        </NormalLayout>
     );
 }
 
